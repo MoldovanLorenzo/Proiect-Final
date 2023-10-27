@@ -1,16 +1,23 @@
 package Cinema;
 class FilmActiune extends Film {
-    String regizor;
+    Regizor regizor;
+    private int rating;
 
-    public FilmActiune(String titlu, int durata, String regizor) {
+    public FilmActiune(String titlu, int durata, Regizor regizor,int rating) {
         super(titlu, durata);
-        this.regizor = regizor;
+        this.regizor=regizor;
+        this.rating=rating;
+    }
+    public FilmActiune(String titlu,int durata,String numeRegizor,String prenumeRegizor,int varstaRegizor)
+    {
+        super(titlu,durata);
+        this.regizor= new Regizor(numeRegizor, prenumeRegizor, varstaRegizor);
     }
 
     @Override
     public void afiseazaInformatii() {
-        System.out.println("Titlu: " + titlu);
-        System.out.println("Durata: " + durata + " minute");
+        System.out.println("Titlu: " + super.getTitlu());
+        System.out.println("Durata: " + super.getDurata()+ " minute");
         System.out.println("Regizor: " + regizor);
     }
 }

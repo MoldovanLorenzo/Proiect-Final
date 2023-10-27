@@ -1,14 +1,11 @@
 package Cinema;
 class Spectator implements Vizualizabil {
     private static Spectator instance = null;
-    String numeSpectator;
-    int varsta;
+     private String numeSpectator;
 
     private Spectator() {
         this.numeSpectator = "Nedeterminat";
-        this.varsta = 0;
     }
-
     public static Spectator getInstance() {
         if (instance == null) {
             instance = new Spectator();
@@ -20,12 +17,7 @@ class Spectator implements Vizualizabil {
         this.numeSpectator = numeSpectator;
     }
 
-    public void setVarsta(int varsta) {
-        this.varsta = varsta;
-    }
-
     public void afiseazaInformatii() {
         System.out.println("Nume Spectator: " + numeSpectator);
-        System.out.println("Varsta Spectator: " + varsta);
     }
 }
