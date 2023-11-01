@@ -14,6 +14,6 @@ public class Regizor {
     @Override
     public String toString()
     {
-        return nume+ " "+prenume+ " "+varsta;
+        return nume+ " "+prenume+ " ,"+varsta+" ani!";
     }
 }

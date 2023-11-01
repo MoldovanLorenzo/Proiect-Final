@@ -1,4 +1,7 @@
 package Cinema;
+
+import java.util.ArrayList;
+
 public abstract class Film implements Vizualizabil {
      private String titlu;
      private int durata;
@@ -15,6 +18,6 @@ public abstract class Film implements Vizualizabil {
     {
         return durata;
     }
-
-    public abstract void afiseazaInformatii();
+    public abstract ArrayList<Bilet> getBilete();
+    public abstract String afiseazaInformatii();
 }

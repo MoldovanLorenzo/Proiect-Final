@@ -1,4 +1,4 @@
 package Cinema;
 public interface Vizualizabil {
-    void afiseazaInformatii();
+    String afiseazaInformatii();
 }

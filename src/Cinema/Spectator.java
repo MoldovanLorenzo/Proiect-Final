@@ -17,7 +17,7 @@ class Spectator implements Vizualizabil {
         this.numeSpectator = numeSpectator;
     }
 
-    public void afiseazaInformatii() {
-        System.out.println("Nume Spectator: " + numeSpectator);
+    public String afiseazaInformatii() {
+        return "Nume Spectator: " + numeSpectator;
     }
 }

@@ -1,18 +1,15 @@
 package Cinema;
 public class Bilet {
     Spectator spectator;
-    Film film;
-    private int pret;
-    private static final int MAXBILETE=20;
+     
+    private static final int MAX_BILETE=20;
 
-    public Bilet(Spectator spectator, Film film, int pret) {
+    public Bilet(Spectator spectator) {
         this.spectator = spectator;
-        this.film = film;
-        this.pret = pret;
     }
     public boolean cumparaBilete(int nrBilete)
     {
-        if(nrBilete<=MAXBILETE)
+        if(nrBilete<=MAX_BILETE)
         {
             System.out.println("ati cumparat"+ nrBilete);
              return true;
@@ -25,7 +22,6 @@ public class Bilet {
     public void afiseazaInformatii() {
         System.out.println("Detalii Bilet:");
         spectator.afiseazaInformatii();
-        System.out.println("Pret Bilet: " + pret + " RON");
-        film.afiseazaInformatii();
+         
     }
 }
