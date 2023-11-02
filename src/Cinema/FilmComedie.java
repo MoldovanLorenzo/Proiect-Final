@@ -20,6 +20,11 @@ private ArrayList<Integer> ratings = new ArrayList<>();
         this.pret = pret;
     }
 
+    public int getPret()
+    {
+        return pret;
+    }
+
     public void setRating(int rating) {
         ratings.add(rating);
     }

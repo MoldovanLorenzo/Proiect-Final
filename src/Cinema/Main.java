@@ -414,14 +414,84 @@ public class Main {
             incasariFilm.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                   
+                   textArea.setText("");
+                   int n = filmActiune.size();
+                    int m = filmComedie.size();
+                    
+                    for (int i = 0; i < n - 1; i++) {
+                        for (int j = 0; j < n - i - 1; j++) {
+                            FilmActiune fa1 = filmActiune.get(j);
+                            FilmActiune fa2 = filmActiune.get(j + 1);
+                            
+                            if (fa2.getNrSpectatori()*fa2.getPret() > fa1.getNrSpectatori()*fa1.getPret()) {
+                                filmActiune.set(j, fa2);
+                                filmActiune.set(j + 1, fa1);
+                            }
+                        }
+                    }
+                    textArea.append("Filmele de actiune cu cele mai mari incasari: \n");
+                    for (FilmActiune fa : filmActiune) {
+                        textArea.append(fa.getTitlu() + " : " + fa.getNrSpectatori()*fa.getPret() + " lei\n");
+                    }
+
+                    for (int i = 0; i < m - 1; i++) {
+                        for (int j = 0; j < m - i - 1; j++) {
+                            FilmComedie fc1 = filmComedie.get(j);
+                            FilmComedie fc2 = filmComedie.get(j + 1);
+                            
+                            if (fc2.getNrSpectatori()*fc2.getPret() > fc1.getNrSpectatori()*fc1.getPret()) {
+                                filmComedie.set(j, fc2);
+                                filmComedie.set(j + 1, fc1);
+                            }
+                        }
+                    }
+                    textArea.append("Filmele de comedie cu cele mai mari incasari: \n");
+                    for (FilmComedie fc : filmComedie) {
+                        textArea.append(fc.getTitlu() + " : " + fc.getNrSpectatori()*fc.getPret() + " lei\n");
+                    }
+
                 }     
             });
 
             ratingFilm.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                  
+                  textArea.setText("");
+                   int n = filmActiune.size();
+                    int m = filmComedie.size();
+                    
+                    for (int i = 0; i < n - 1; i++) {
+                        for (int j = 0; j < n - i - 1; j++) {
+                            FilmActiune fa1 = filmActiune.get(j);
+                            FilmActiune fa2 = filmActiune.get(j + 1);
+                            
+                            if (fa2.getRating() > fa1.getRating()) {
+                                filmActiune.set(j, fa2);
+                                filmActiune.set(j + 1, fa1);
+                            }
+                        }
+                    }
+                    textArea.append("Filmele de actiune cu cele mai mari rating-uri: \n");
+                    for (FilmActiune fa : filmActiune) {
+                        textArea.append(fa.getTitlu() + " : " + fa.getRating() + " stele\n");
+                    }
+
+                    for (int i = 0; i < m - 1; i++) {
+                        for (int j = 0; j < m - i - 1; j++) {
+                            FilmComedie fc1 = filmComedie.get(j);
+                            FilmComedie fc2 = filmComedie.get(j + 1);
+                            
+                            if (fc2.getRating() > fc1.getRating()) {
+                                filmComedie.set(j, fc2);
+                                filmComedie.set(j + 1, fc1);
+                            }
+                        }
+                    }
+                    textArea.append("Filmele de comedie cu cele mai mari rating-uri: \n");
+                    for (FilmComedie fc : filmComedie) {
+                        textArea.append(fc.getTitlu() + " : " + fc.getRating() + " stele\n");
+                    }
+
                 }     
             });
 
